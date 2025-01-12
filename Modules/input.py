@@ -10,7 +10,7 @@ display_banner()
 
 def Valid_Format(URL): #
     Blocked_Domains = {".mil", ".gov", ".edu"}
-    r = r"^(https?://)([a-zA-Z0-9\u00a1-\uffff-]+\.)+(com|org|net|edu|tech|gov|mil|info|biz|name|pro|xyz|xn--[a-zA-Z0-9-]+\.[a-zA-Z]{2,})(\/[^\s]*)?$"
+    r = r"^(https?://)?([a-zA-Z0-9\u00a1-\uffff-]+\.)+(com|org|net|edu|tech|gov|mil|info|biz|name|pro|xyz|xn--[a-zA-Z0-9-]+\.[a-zA-Z]{2,})(\/[^\s]*)?$"
     if any(domain in URL for domain in Blocked_Domains):
         c.print("[bold red]Blocked Domain[/bold red]")    
         return "Blocked Domain"
@@ -46,7 +46,7 @@ if Valid_Format_Result == "Valid URL":
     Precense_Result = Check_Presence(URL)
     if Precense_Result == "Website is reachable":
         WordPress_Result = Is_WordPress(URL)
-        if WordPress_Result == "WordPress  Detected":
+        if WordPress_Result == "Is WordPress":
             c.print("[bold green] WordPress Detected[/bold green]")
         else :
             c.print("[bold red] WordPress Not Detected[/bold red]")
