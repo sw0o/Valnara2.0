@@ -46,5 +46,7 @@ if Valid_Format_Result == "Valid URL":
     Precense_Result = Check_Presence(URL)
     if Precense_Result == "Website is reachable":
         WordPress_Result = Is_WordPress(URL)
-        if WordPress_Result == "WordPress Not Detected":
-            c.print("[bold green]no WordPress Detected[/bold green]")
+        if WordPress_Result == "WordPress  Detected":
+            c.print("[bold green] WordPress Detected[/bold green]")
+        else :
+            c.print("[bold red] WordPress Not Detected[/bold red]")
